@@ -336,6 +336,12 @@ CPositionSizeCalculator::CPositionSizeCalculator(void)
     InitVariables();
     OutsideCloseButtonsCorner = CORNER_RIGHT_LOWER;
     TesterPanelPointer = GetPointer(this);
+    PersistentList = new CPanelList;
+    MainTabList = new CPanelList;
+    RiskTabList = new CPanelList;
+    MarginTabList = new CPanelList;
+    SwapsTabList = new CPanelList;
+    TradingTabList = new CPanelList;
 }
 
 //+-------------------+
@@ -654,17 +660,11 @@ bool CPositionSizeCalculator::CreateObjects()
 
 // Tabs
 
-    PersistentList = new CPanelList;
     if (!ButtonCreate(PersistentList, m_BtnTabMain, tab_button_start, y, tab_button_start + tab_button_width, y + element_height, "m_BtnTabMain", TRANSLATION_TAB_BUTTON_MAIN))                                                                                                                                                                                                                                                       return false;
-    MainTabList = new CPanelList;
     if (!ButtonCreate(PersistentList, m_BtnTabRisk, tab_button_start + tab_button_width + tab_button_spacing, y, tab_button_start + tab_button_width * 2 + tab_button_spacing, y + element_height, "m_BtnTabRisk", TRANSLATION_TAB_BUTTON_RISK))                                                                                                                                                                                      return false;
-    RiskTabList = new CPanelList;
     if (!ButtonCreate(PersistentList, m_BtnTabMargin, tab_button_start + tab_button_width * 2 + tab_button_spacing * 2, y, tab_button_start + tab_button_width * 3 + tab_button_spacing * 2, y + element_height, "m_BtnTabMargin", TRANSLATION_TAB_BUTTON_MARGIN))                                                                                                                                                                    return false;
-    MarginTabList = new CPanelList;
     if (!ButtonCreate(PersistentList, m_BtnTabSwaps, tab_button_start + tab_button_width * 3 + tab_button_spacing * 3, y, tab_button_start + tab_button_width * 4 + tab_button_spacing * 3, y + element_height, "m_BtnTabSwaps", TRANSLATION_TAB_BUTTON_SWAPS))                                                                                                                                                                       return false;
-    SwapsTabList = new CPanelList;
     if (!ButtonCreate(PersistentList, m_BtnTabTrading, tab_button_start + tab_button_width * 4 + tab_button_spacing * 4, y, tab_button_start + tab_button_width * 5 + tab_button_spacing * 4, y + element_height, "m_BtnTabTrading", TRANSLATION_TAB_BUTTON_TRADING))                                                                                                                                                                 return false;
-    TradingTabList = new CPanelList;
 
 // Main
 
